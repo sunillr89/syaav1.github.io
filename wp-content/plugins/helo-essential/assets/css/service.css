@@ -1,0 +1,101 @@
+.helo__service svg {
+    width: 1em;
+    height: 1em;
+}
+
+.helo__service {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.helo__service .item {
+    border-right: 1px solid #FFFFFF4D;
+    padding: 300px 30px 30px;
+    overflow: hidden;
+}
+
+.helo__service .title {
+    color: #fff;
+    transition: all 0.3s;
+    transform: translateY(25px);
+}
+
+.helo__service .service-btn {
+    fill: #fff;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+    transform: translateY(25px);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.helo__service .item:hover .title {
+    transform: translateY(0);
+}
+
+.helo__service .item:hover .service-btn {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.helo__service .image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+.helo__service .image::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #12121240;
+}
+
+.helo__service .image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.helo__service .item:first-child .image {
+    opacity: 1;
+}
+
+.helo__service .item:hover .image {
+    opacity: 1;
+}
+
+/* Responsive */
+
+@media (max-width: 1200px) {
+    .helo__service .item {
+        position: relative;
+    }
+    .helo__service .image {
+        opacity: 1;
+    }
+    .helo__service .service-btn,
+    .helo__service .title {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    .helo__service .item:hover .title {
+        transform: translateY(0) !important;
+    }
+}

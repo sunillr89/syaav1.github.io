@@ -1,0 +1,64 @@
+/*----------------------------------------*/
+/*  09. HEADER CSS START
+/*----------------------------------------*/
+
+.header {
+  &__wrapper {
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    padding-top: 15px;
+  }
+
+  &__logo {
+    img {
+      max-width: 120px;
+      height: auto;
+    }
+  }
+
+  &-btn {
+    @media #{$sm} {
+      display: none;
+    }
+
+    a {
+      color: #fff;
+      background: #121212;
+
+      &:hover {
+        background-color: transparent;
+
+        &::after {
+          background-color: var(--primary);
+        }
+      }
+    }
+  }
+
+  &__nav {
+    align-self: center;
+
+    @media #{$lg} {
+      display: none;
+    }
+
+    &-icon {
+      gap: 20px;
+      display: flex;
+      align-items: center;
+
+      .menu-icon {
+        cursor: pointer;
+        display: none;
+
+        @media #{$lg} {
+          display: block;
+        }
+      }
+    }
+  }
+
+}
